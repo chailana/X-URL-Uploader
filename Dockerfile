@@ -20,5 +20,5 @@ COPY start.sh /app/
 # Make start.sh executable
 RUN chmod +x /app/start.sh
 
-# Use start.sh as the entrypoint
-CMD ["/app/start.sh"]
+# Use bash to run start.sh
+CMD ["bash", "/app/start.sh"]
