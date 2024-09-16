@@ -14,4 +14,11 @@ RUN pip3 install --no-cache-dir -r requirements.txt
 RUN apt-get update
 RUN apt-get install -y ffmpeg
 
-CMD python3 -m Bot
+# Copy the start.sh script
+COPY start.sh /app/
+
+# Make start.sh executable
+RUN chmod +x /app/start.sh
+
+# Use start.sh as the entrypoint
+CMD ["/app/start.sh"]
